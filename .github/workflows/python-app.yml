@@ -35,8 +35,8 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build and push
-      uses: sendresults/Dockerfile/build-push-action@v2
+      uses: dockerfile/build-push-action@v2
       with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: dinesh198384/app:latest
