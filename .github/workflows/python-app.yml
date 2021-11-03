@@ -36,8 +36,8 @@ jobs:
       name: Login to DockerHub
       uses: docker/login-action@v1 
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
        
     - name: Build and push
       id: docker_build
@@ -46,4 +46,4 @@ jobs:
         context: ./
         file: sendresults/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/reviewerscope-repo:latest
+        tags: ${{ secrets.DOCKERHUB_USER }}/reviewerscope-repo:latest
