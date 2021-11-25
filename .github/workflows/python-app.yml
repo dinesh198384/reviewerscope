@@ -52,14 +52,14 @@ jobs:
     # Build the Docker image
     - name: Build with Docker
       run: |
-         docker build . --file ./dockerfile -t dinesh198384/conferencemanager-repo:conferencemanagerimg$(echo ${GITHUB_SHA} | cut -c1-8)
+         docker build . --file ./sendresults/dockerfile -t dinesh198384/hello-repo:helloimg$(echo ${GITHUB_SHA} | cut -c1-8)
 
         
     # Push the image to IBM Container Registry
     - name: Push the image to ICR
       run: |
        docker login -u dinesh198384 -p Psd@198384 docker.io
-       docker push dinesh198384/conferencemanager-repo:conferencemanagerimg$(echo ${GITHUB_SHA} | cut -c1-8)
+       docker push dinesh198384/hello-repo:helloimg$(echo ${GITHUB_SHA} | cut -c1-8)
         
     # Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
