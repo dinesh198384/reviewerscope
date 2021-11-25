@@ -52,7 +52,7 @@ jobs:
     # Build the Docker image
     - name: Build with Docker
       run: |
-         docker build . --file ./sendresults/dockerfile -t dinesh198384/hello-repo:helloimg$(echo ${GITHUB_SHA} | cut -c1-8)
+         docker build . --file ./sendresults/Dockerfile -t dinesh198384/hello-repo:helloimg$(echo ${GITHUB_SHA} | cut -c1-8)
 
         
     # Push the image to IBM Container Registry
